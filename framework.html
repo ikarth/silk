@@ -12,7 +12,9 @@
 
     <script src="./framework.js"></script>
     <script>
+      // You can load your results as a variable from a JavaScript file...
       //displayResults(test_grammar, "output");
+      // ...or from a JSON file:
       loadJSON(function(json_response) {
         displayResults(JSON.parse(json_response), "output");
       }, "./grammars/test_grammar.json");

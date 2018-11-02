@@ -39,7 +39,7 @@ function displayResults(input_grammar, element_id) {
                          responses += "</li>"
                          }
       responses += "</ul>";
-    container.innerHTML = responses;
+    document.create = responses;
     console.log(responses);
 }
     
