@@ -22,7 +22,7 @@ function loadJSON(callback, filepath) {
 
 
 function testGrammar(grammar_rules, context) {
-    console.log(grammar_rules);
+    console.debug(grammar_rules);
     let grammar = tracery.createGrammar(grammar_rules);
     //grammar.addModifiers(baseEngModifiers);
     grammar.clearState();
@@ -39,7 +39,7 @@ function displayResults(input_grammar, element_id) {
                          responses += "</li>"
                          }
       responses += "</ul>";
-    document.create = responses;
+    container.innerHTML = responses;
     console.log(responses);
 }
     
