@@ -5,22 +5,17 @@
     <script src="./tracery.js"></script>
   </head>
   <body>
-    <script src="./framework.js"></script>
+    <script src="./grammars/test_grammar.js"></script>
     <div id="output">
       
     </div>
+
+    <script src="./framework.js"></script>
     <script>
-      var container = document.getElementById("output");
-      var response = testGrammar();
-      var responses = "<ul>";
-      for(var i = 0; i < 15; i++) {
-                         responses += "<li>";
-                         responses += testGrammar()["message"];
-                         responses += "</li>"
-                         }
-      responses += "</ul>";
-      container.innerHTML = responses;
-      console.log(responses);
+      //displayResults(test_grammar, "output");
+      loadJSON(function(json_response) {
+        displayResults(JSON.parse(json_response), "output");
+      }, "./grammars/test_grammar.json");
     </script>
   </body>
 </html>
