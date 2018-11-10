@@ -6,6 +6,7 @@ function partial(func, ...argsBound) {
   }
 }
 
+
 function loadJSON(callback, filepath) {   
 
     var xobj = new XMLHttpRequest();
