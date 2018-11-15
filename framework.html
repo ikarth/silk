@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <script src="./tracery.js"></script>
+    <script src="tracery.js"></script>
+
   </head>
   <body>
+    <script src="./plot_arc.js"></script>
     <script src="./grammars/test_grammar.js"></script>
     <div id="output">
       
@@ -13,11 +15,17 @@
     <script src="./framework.js"></script>
     <script>
       // You can load your results as a variable from a JavaScript file...
-      displayResults(test_grammar, "output");
+      //displayResults(plot_rules, "output");
+      generatePlot();
       // ...or from a JSON file:
       //loadJSON(function(json_response) {
       //  displayResults(JSON.parse(json_response), "output");
       //}, "./grammars/test_grammar.json");
+
+      
+
     </script>
+    <div id="visualization" style="">
+    </div>
   </body>
 </html>
