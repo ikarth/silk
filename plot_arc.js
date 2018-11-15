@@ -19,7 +19,12 @@ var plot_arcs = {
     "PLOT_give_present":["LAUNDRY_give_present_to_friend"],
     "PLOT_pass_obstacle":["#PLOT_need_macguffin# #PLOT_return_to_obstacle# #PLOT_complete_obstacle#"],
     "PLOT_start_journey":["LAUNDRY_start_journey NESTING_increase_journey_nesting"],
-    "PLOT_end_journey":["LAUNDRY_end_journey NESTING_decrease_journey_nesting"]
+    "PLOT_end_journey":["LAUNDRY_end_journey NESTING_decrease_journey_nesting"],
+    "PLOT_return_home":["#PLOT_start_journey# #PLOT_journey_event# #PLOT_end_journey# #PLOT_arrive_at_home#"],
+    "PLOT_return_to_obstacle":["#PLOT_start_journey# #PLOT_journey_event# #PLOT_end_journey# #PLOT_arrive_at_destination#"],
+    "PLOT_complete_obstacle": ["LAUNDRY_pass_obstacle"],
+    "PLOT_arrive_at_home":["LAUNDRY_arrive_at_destination"],
+    "PLOT_arrive_at_destination":["LAUNDRY_arrive_at_destination"],
 };
 
 var plot_replacement_map = {
@@ -32,11 +37,11 @@ var plot_replacement_map = {
   "LAUNDRY_gained_macguffin":   {event: ['find', 'notion.place', 'thing'], closure: 'lost', gloss: "got macguffin"},
   "LAUNDRY_think_about_macguffin":   {event: ['reflect', 'thing'], gloss: "reflection: on macguffin"},
   "LAUNDRY_give_present_to_friend":   {event: ['gift', 'friend', 'thing'], closure: 'thing', gloss: "give macguffin to friend"},
-  //"LAUNDRY_start_journey": {},
-  //"LAUNDRY_end_journey": {},
-  //"LAUNDRY_arrive_at_destination": {},
-  "LAUNDRY_": {},
-  "LAUNDRY_": {},
+  "LAUNDRY_start_journey": {event:['journey-start'], gloss: "character starts their journey (great for introducing expositon)"},
+  "LAUNDRY_end_journey": {event:['journey-end'], gloss: "character ends their journey"},
+  "LAUNDRY_arrive_at_destination": {event:['travel-quest','notion-place'], gloss: "arrive at the place we've been trying to get to"},
+  "LAUNDRY_pass_obstacle": {event: ['journey-event'], gloss: "character gets past obstacle"},
+  //"LAUNDRY_": {},
   "LAUNDRY_": {},  
 };
 
