@@ -1,0 +1,27 @@
+{
+    "origin":["[theCrop:#crop#]#fields#","#terrain#"],
+    
+    "fields":["#fields_morning#","#fields_night#", "Fields of #crop# #expanse#, towards the horizon."],
+    "fields_morning":["[theTime:morning]#weather_time#. #inhabited_desc#"],
+    "fields_night":["[theTime:night]#weather_time#. #uninhabited_desc#"],
+    "crop":["barley","rice","wheat","cotton","peas","lentils","onions"],
+    "inhabited_desc":["#farmers.capitalize# #moved_through# fields of #theCrop#"],
+    "uninhabited_desc":["Fields of #theCrop# #expanse#, #uninhabited_prep#.", "#animal.capitalize# flitted through the #uninhabited# fields."],
+    "uninhabited_prep":["now #uninhabited#", "with no soul in them"],
+    "farmers":["#farmer_desc# #farmers","#lines_of# #farmers# carrying #tool#"],
+    "farmer_desc":["hunched", "#lines_of#"],
+    "farmers":["bodies","souls","farmers"],
+    "tool":["sacks","hoes"],
+    
+    "terrain":["#steppes#"],
+    
+    "steppes":["The steppes #expanse# around the travelers."],
+    
+    "uninhabited":["vacant","empty"],
+    "lines_of":["lines of", "rows of", "many"],
+    "animal":["crows", "hamsters"],
+    "moved_through":["moved through", "walked across", "labored in"],
+    "weather_time":["It was a #weather# #theTime#"],
+    "weather":["crisp", "sodden", "warm", "dry"],
+    "expanse":["stretched out", "expanded", "covered the earth"]
+}
