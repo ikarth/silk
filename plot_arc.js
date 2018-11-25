@@ -4,12 +4,32 @@
 // @ikarth
 
 
+//var plot_planner = {};
+//plot_planner["#PLOT_journey"] = [["#PLOT_arrive_at_destination#"],["#PLOT_journey_event#", "#PLOT_journey#"]];
+//plot_planner["#PLOT_arrive_at_destination#"] = ["LAUNDRY_arrive_at_destination"];
+//plot_planner[""] = ["#PLOT_get_macguffin#"];
+//plot_planner["#PLOT_get_macguffin#"] = [["LAUNDRY_gained_macguffin"]];
+//goal_stack = ["PLOT_arrive_at_destination"];
+
+
 var plot_arcs = {
     "origin": ["#PLOT_ARC#"],
     "PLOT_ARC":["[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin# #PLOT_return_home# #PLOT_give_present#",
-                "[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin_fail# #PLOT_return_home# #PLOT_failure_to_give_present#"],
+                "[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin_fail# #PLOT_return_home# #PLOT_failure_to_give_present#",
+                "[motive:flee_town]#PLOT_reason_to_flee_town# #PLOT_flee_town# #PLOT_wandering# #PLOT_return_home# #PLOT_resolve_reason_for_fleeing#",
+                "[motive:flee_town]#PLOT_reason_to_flee_town# #PLOT_flee_town# #PLOT_wandering# #PLOT_never_returned_home#",
+                "[motive:flee_town]#PLOT_reason_to_flee_town# #PLOT_flee_town# #PLOT_wandering# #PLOT_new_quest#",
+                "#PLOT_new_quest#"
+                ],
+    "PLOT_new_quest": ["#PLOT_establish_quest# #PLOT_need_macguffin# #PLOT_resolve_quest#", "#PLOT_protecting_someone#", "#PLOT_new_quest# #PLOT_wandering# #PLOT_new_quest#"],
+    "PLOT_protecting_someone": ["#PLOT_need_macguffin#"],
+    "PLOT_establish_quest": ["LAUNDRY_establish_quest"],
+    "PLOT_resolve_quest": ["LAUNDRY_resolve_quest"],
+    "PLOT_reason_to_flee_town":["LAUNDRY_reason_to_flee_town"],
+    "PLOT_flee_town":["LAUNDRY_flee_town #PLOT_journey_event#", "LAUNDRY_flee_town"],
     "PLOT_need_macguffin": ["NESTING_increase_macguffin_nesting #PLOT_hear_about_macguffin# #PLOT_start_journey# #PLOT_journey# #PLOT_know_macguffin_location# #PLOT_journey# #PLOT_acquire_macguffin# #PLOT_end_journey#"],
     "PLOT_need_macguffin_fail": ["NESTING_increase_macguffin_nesting #PLOT_hear_about_macguffin# #PLOT_start_journey# #PLOT_journey# #PLOT_know_macguffin_location# #PLOT_journey# #PLOT_acquire_macguffin_fail# #PLOT_end_journey#"],
+    "PLOT_wandering":["#PLOT_journey_event#","#PLOT_wandering# #PLOT_journey_event#"],
     "PLOT_journey":["","#PLOT_journey_event#","#PLOT_journey_event#","#PLOT_journey_event#","#PLOT_journey# #PLOT_journey#"],
     "PLOT_acquire_macguffin": ["#PLOT_arrive_at_macguffin_location# #PLOT_pass_obstacle# #PLOT_get_macguffin#", "#PLOT_arrive_at_macguffin_location# #PLOT_get_macguffin#"],
     "PLOT_acquire_macguffin_fail": ["#PLOT_arrive_at_macguffin_location# #PLOT_pass_obstacle_fail# #PLOT_get_macguffin_fail#"],
@@ -26,6 +46,7 @@ var plot_arcs = {
     "PLOT_start_journey":["LAUNDRY_start_journey NESTING_increase_journey_nesting"],
     "PLOT_end_journey":["LAUNDRY_end_journey NESTING_decrease_journey_nesting"],
     "PLOT_return_home":["#PLOT_start_journey# #PLOT_journey_event# #PLOT_end_journey# #PLOT_arrive_at_home#"],
+    "PLOT_never_returned_home":["LAUNDRY_never_return_home","LAUNDRY_never_return_home #PLOT_new_quest# LAUNDRY_walk_into_the_sunset"],
     "PLOT_return_to_obstacle":["#PLOT_start_journey# #PLOT_journey_event# #PLOT_end_journey# #PLOT_arrive_at_destination#"],
     "PLOT_overcome_obstacle": ["LAUNDRY_overcome_obstacle"],
     "PLOT_overcome_obstacle_fail": ["LAUNDRY_overcome_obstacle_fail"],
