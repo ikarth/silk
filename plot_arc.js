@@ -82,15 +82,18 @@ function generatePlot() {
     grammar.clearState();
     let message = grammar.flatten("#origin#");
     let tokens = message.split(" ");
-    console.log(tokens);
-    let laundry = tokens.map(function(x){ let y = plot_replacement_map[x];return undefined != y? y : x;});
+    // console.log(tokens);
 
+    let laundry = tokens.map(function(x) {
+      let y = plot_replacement_map[x]
+      return undefined != y ? y : x
+    });
 
-    let output = JSON.stringify(laundry);
+    /* let output = JSON.stringify(laundry);
 
     let element_id = "output";
     let container = document.getElementById(element_id);
-    container.innerHTML = "<p>" + output + "</p>";
+    container.innerHTML = "<p>" + output + "</p>"; */
     
-    return message;
+    return laundry;
 }
