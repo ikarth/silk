@@ -105,7 +105,7 @@ function weave(edges, constraints) {
       let path = e[i].split('.'),
           prev = focus
       let res = path.reduce((tail, head) => {
-        let board = select(head).select('#'+prev)
+        let board = select(head).select('#,'+prev)
         // let fallback = cast[head] ? cast[head] : edges.length
         
         console.log('\t\t' + board.body[0])
@@ -146,6 +146,30 @@ function displayResults(element_id) {
                          }
       responses += "</ul>"; */
     container.innerHTML = '<ul>' + responses + '</ul>';
+    console.log(responses);
+}
+    
+
+
+function testGrammar(grammar_rules, context) {
+    console.debug(grammar_rules);
+    let grammar = tracery.createGrammar(grammar_rules);
+    //grammar.addModifiers(baseEngModifiers);
+    grammar.clearState();
+    let message = grammar.flatten("#origin#");
+    return {"message": message, "context": grammar};
+}
+
+function testGrammar_displayResults(input_grammar, element_id) {
+      var container = document.getElementById(element_id);
+      var responses = "<ul>";
+      for(var i = 0; i < 15; i++) {
+                         responses += "<li>";
+                         responses += testGrammar(input_grammar)["message"];
+                         responses += "</li>"
+                         }
+      responses += "</ul>";
+    container.innerHTML = responses;
     console.log(responses);
 }
     

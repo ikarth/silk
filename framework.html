@@ -9,14 +9,13 @@
     <script src="./plot_arc.js"></script>
     <script src="./select.js"></script>
     <script src="./grammars/eventer.js"></script>
-    <div id="output">
-      
-    </div>
-
+    <div id="testing"></div>
+    <div id="output"></div>
     <script src="./framework.js"></script>
     <script>
       // You can load your results as a variable from a JavaScript file...
       //displayResults(plot_rules, "output");
+      testGrammar_displayResults(plot_rules, 'testing');
       displayResults('output');
       // ...or from a JSON file:
       //loadJSON(function(json_response) {
