@@ -13,7 +13,7 @@
 
 
 var plot_arcs = {
-    "origin": ["#PLOT_ARC#"],
+    "origin": ["#LAUNDRY_into_character# #PLOT_ARC#"],
     "PLOT_ARC":["[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin# #PLOT_return_home# #PLOT_give_present#",
                 "[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin_fail# #PLOT_return_home# #PLOT_failure_to_give_present#",
                 "[motive:flee_town]#PLOT_reason_to_flee_town# #PLOT_flee_town# #PLOT_wandering# #PLOT_return_home# #PLOT_resolve_reason_for_fleeing#",
@@ -56,6 +56,7 @@ var plot_arcs = {
 };
 
 var plot_replacement_map = {
+  "LAUNDRY_intro_character": { event: ['intro-character'], gloss: "introduce the character"},
   "LAUNDRY_want_to_give_present": { event: ['intend-gift', 'friend'], gloss: "need thing for friend"},
   "LAUNDRY_need_gift_to_pass_guard": { event: ['intend-gift', 'antagonist'], gloss: "need thing to give to guard to pass obstacle"},
   "LAUNDRY_journey_event" : {event: ['journey-event'], gloss: "something happens along the way while travelling"},
@@ -88,12 +89,14 @@ function generatePlot() {
       let y = plot_replacement_map[x]
       return undefined != y ? y : x
     });
+  let display_laundry = true;
+    if(display_laundry) {
+      let output = JSON.stringify(laundry);
 
-    /* let output = JSON.stringify(laundry);
-
-    let element_id = "output";
-    let container = document.getElementById(element_id);
-    container.innerHTML = "<p>" + output + "</p>"; */
+      let element_id = "output";
+      let container = document.getElementById(element_id);
+      container.innerHTML = "<p>" + output + "</p>";
+    }
     
     return laundry;
 }
