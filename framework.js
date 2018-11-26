@@ -70,11 +70,9 @@ function weave(edges, constraints) {
     console.debug(c)
     if (!c.event) return // swallow nesting 'events'
 
-    let e = c.event, exp = eventer[e[0]]
-    let str = exp.length != 0 ? choose(...exp)
-                              : e[0] + ' {} {}'.repeat(e.length-1)
-    
+    let e = c.event    
     console.log(e[0])
+
     let bindings = e.map((u,i) => {
       if (i==0) return [focus]
       console.log('\t' + e[i])
@@ -100,13 +98,28 @@ function weave(edges, constraints) {
     }) // defines bindings
     let bound = bindings.reduce((U,u) => U.concat(u))
 
+    // FIXME: discourage cast recycling.
+    //        should suffice to do this locally during path resolution.
     if (bound.length > 1) {
       console.debug('banning ' + bound.slice(1).map(i => char[i]))
       bound.slice(1).forEach(i => reserved.add(i))
     }
     console.debug(reserved)
+
+    // TRIGGER expansion
+    // let exp = eventer[e[0]],
+    //     str = exp.length != 0 ? choose(...exp) : e[0] + ' {} {}'.repeat(e.length-1),
+    //     expansion = format(str, ...bound.map(i => char[i]))
+
+    let cast = bound.map((i,j) => char[i]),
+                // {let ret = {}; ret[char[j]] = char[i]; return ret}
+        grammar = tracery.createGrammar({...eventer[e[0]], ...cast});
+    grammar.clearState();
+    // console.log(cast)
+    console.log(grammar)
+    let expansion = grammar.flatten("#origin#");
     
-    ret.push(format(str, ...bound.map(i => char[i])))
+    ret.push(expansion)
   })
   
   return ret
