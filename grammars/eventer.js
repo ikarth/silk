@@ -18,4 +18,9 @@ let eventer = {
     'journey-end': ['{} concluded their journey.'],
     'journey-event': ['{} encountered something on their journey.'],
     'journey-start': ['{} began their journey.'],
+    'journey-new': ['{} began their nested journey.'],
+    'journey-resolve': ['{} began their nested journey.'],
+    'macguffin-new': ['{} started to look for {}'],
+    'macguffin-resolve': ['{} finished their sub-quest for {}'],
+    'intro-character': ['Introduce {}'],
   }
