@@ -1,5 +1,7 @@
-let char = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase()
+// d3-style interface to a directed graph, maybe cyclic
+// @jatazak
 
+let char = 'abcdefghjklmnopqrstuvwxyz'.toUpperCase() // omit 'I'
 class Rel {
     constructor(body) {
       this.body = [...body] // list of bonds
@@ -33,10 +35,19 @@ class Rel {
         )
       }
     }
-    pickOne(prioritize = (u) => 1) {
-      let weights = this.body.map(prioritize),
+
+    drop(entities) { // remove invalid targets (FIXME)
+      // console.log('drop ' + [...entities])
+      let ret = this.body.filter(u => !entities.has(u.name.split(',')[1]))
+      // console.log('left ' + ret.map(u => u.name).join(' '))
+      return new Rel(ret)
+    }
+
+    pickOne(except = [], prioritize = (u) => 1) {
+      let choices = this.body
+      let weights = choices.map(prioritize),
           board = weights.reduce((acc, u) => acc + u, 0)
-      if (this.body.length == 0) {
+      if (choices.length == 0) {
         // throw 'tried to pick from empty selection'
         return undefined
       }
@@ -48,7 +59,7 @@ class Rel {
         counter += weights[i]
         if (counter > roll) break
       }
-      return new Rel( [this.body[i]] )
+      return new Rel( [choices[i]] )
     }
     
     push(kind) {

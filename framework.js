@@ -1,14 +1,16 @@
 'use strict';
 
-let relations = makeRelations()
-function makeRelations() {  
+let N = 3
+
+let relations = makeRelations(N)
+function makeRelations(N) {  
   let edges = [], i = 0
   function link(i,j,u) {
     if (!edges[i]) edges[i] = []
     edges[i][j] = u
   }
 
-  let N = 3, j = 0
+  let j = 0
   while (i < N) {
     let rel = Math.random() < .8 - .1*i ? 'notion' : 'friend'
     
@@ -61,11 +63,11 @@ function weave(edges, constraints) {
   }
   let ret = [],
       focus = constraints.protagonist,
-      cast = {},
+      reserved = new Set([focus]),
       edge = edges.length
   
   constraints.goals.forEach((c) => {
-    console.log(c)
+    console.debug(c)
     if (!c.event) return // swallow nesting 'events'
 
     let e = c.event, exp = eventer[e[0]]
@@ -79,24 +81,32 @@ function weave(edges, constraints) {
       
       let path = e[i].split('.'),
           head = focus
+
+      // resolve a path (in the social graph)
       let res = path.reduce((tail, verb) => {
         let board = select(verb).select('#'+head)
-        // let fallback = cast[head] ? cast[head] : edges.length
         
         console.log('\t\t' + board.body[0])
-        let pick = board.isEmpty() ? link(head, edge, verb) : board.pickOne()
+        let pick = board.isEmpty() ? link(head, edge, verb) :
+                                    board.drop(reserved).pickOne()
         
-        let res = board.isEmpty() ? edge++ : pick.body[0].name.split(',')[1]
+        let res = board.isEmpty() ? edge++ :
+                                    pick.body[0].name.split(',')[1]
         head = res
         tail.push(parseInt(res))
         return tail
       }, []) // defines res, the sequence of nodes matching path
-      
       return res
     }) // defines bindings
-    let munged = bindings.reduce((U,u) => U.concat(u))
+    let bound = bindings.reduce((U,u) => U.concat(u))
+
+    if (bound.length > 1) {
+      console.debug('banning ' + bound.slice(1).map(i => char[i]))
+      bound.slice(1).forEach(i => reserved.add(i))
+    }
+    console.debug(reserved)
     
-    ret.push(format(str, ...munged.map(i => char[i])))
+    ret.push(format(str, ...bound.map(i => char[i])))
   })
   
   return ret
@@ -104,11 +114,10 @@ function weave(edges, constraints) {
 
 function displayResults(element_id) {
       var container = document.getElementById(element_id);
-      let constraints = {goals: generatePlot().reverse(),
-                         protagonist: 0}
+      let constraints = generatePlot(N)
 
       // console.log(constraints.goals)
-      console.log(relations)
+      // console.log(relations)
       let responses = weave(relations, constraints)
                       .map((u) => '<li>' + u + '</li>')
                       .reverse().join('\n')
@@ -122,8 +131,7 @@ function displayResults(element_id) {
                          }
       responses += "</ul>"; */
     container.innerHTML = '<ul>' + responses + '</ul>';
-    console.log(relations)
-    // console.log(responses);
+    // console.log(relations)
 }
     
 
