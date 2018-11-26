@@ -1,33 +1,5 @@
 'use strict';
 
-/* function partial(func, ...argsBound) {
-  return function(...args) { // (*)
-    return func.call(this, ...argsBound, ...args);
-  }
-}
-function loadJSON(callback, filepath) {   
-
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', filepath, true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
-}
-
-function testGrammar(grammar_rules, context) {
-    console.debug(grammar_rules);
-    let grammar = tracery.createGrammar(grammar_rules);
-    //grammar.addModifiers(baseEngModifiers);
-    grammar.clearState();
-    let message = grammar.flatten("#origin#");
-    return {"message": message, "context": grammar};
-} */
-
 let relations = makeRelations()
 function makeRelations() {  
   let edges = [], i = 0
@@ -36,16 +8,19 @@ function makeRelations() {
     edges[i][j] = u
   }
 
-  while (edges.length < 5) {
-    let rel = Math.random() < .8 ? 'friend' : 'foe'
+  let N = 3, j = 0
+  while (i < N) {
+    let rel = Math.random() < .8 - .1*i ? 'notion' : 'friend'
     
-    if (Math.random() < 1 - .1*i) {
-      link(i, i+1, rel) // link to next entity
+    if (rel == 'friend') {
+      link(i, i+1, rel) // link to next person
+      link(i+1, i, rel) // relationships are mutual
       ++i // advance pointer
     }
     else {
-      let j = Math.floor(Math.random()*i)
-      link(i, j, rel) // link to a previous entity
+      let k = N + Math.floor(Math.random()*j)
+      link(i, k, rel) // link to any non-person
+      ++j
     }
   }
   return edges
@@ -103,16 +78,16 @@ function weave(edges, constraints) {
       console.log('\t' + e[i])
       
       let path = e[i].split('.'),
-          prev = focus
-      let res = path.reduce((tail, head) => {
-        let board = select(head).select('#'+prev)
+          head = focus
+      let res = path.reduce((tail, verb) => {
+        let board = select(verb).select('#'+head)
         // let fallback = cast[head] ? cast[head] : edges.length
         
         console.log('\t\t' + board.body[0])
-        let pick = board.isEmpty() ? link(prev, edge, head) : board.pickOne()
+        let pick = board.isEmpty() ? link(head, edge, verb) : board.pickOne()
         
         let res = board.isEmpty() ? edge++ : pick.body[0].name.split(',')[1]
-        prev = res
+        head = res
         tail.push(parseInt(res))
         return tail
       }, []) // defines res, the sequence of nodes matching path
@@ -132,7 +107,8 @@ function displayResults(element_id) {
       let constraints = {goals: generatePlot().reverse(),
                          protagonist: 0}
 
-      console.log(constraints.goals)
+      // console.log(constraints.goals)
+      console.log(relations)
       let responses = weave(relations, constraints)
                       .map((u) => '<li>' + u + '</li>')
                       .reverse().join('\n')
@@ -146,6 +122,36 @@ function displayResults(element_id) {
                          }
       responses += "</ul>"; */
     container.innerHTML = '<ul>' + responses + '</ul>';
-    console.log(responses);
+    console.log(relations)
+    // console.log(responses);
 }
     
+
+
+/* function partial(func, ...argsBound) {
+  return function(...args) { // (*)
+    return func.call(this, ...argsBound, ...args);
+  }
+}
+function loadJSON(callback, filepath) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', filepath, true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+}
+
+function testGrammar(grammar_rules, context) {
+    console.debug(grammar_rules);
+    let grammar = tracery.createGrammar(grammar_rules);
+    //grammar.addModifiers(baseEngModifiers);
+    grammar.clearState();
+    let message = grammar.flatten("#origin#");
+    return {"message": message, "context": grammar};
+} */

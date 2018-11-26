@@ -39,7 +39,7 @@ var plot_replacement_map = {
   "LAUNDRY_give_present_to_friend":   {event: ['gift', 'friend', 'thing'], closure: 'thing', gloss: "give macguffin to friend"},
   "LAUNDRY_start_journey": {event:['journey-start'], gloss: "character starts their journey (great for introducing expositon)"},
   "LAUNDRY_end_journey": {event:['journey-end'], gloss: "character ends their journey"},
-  "LAUNDRY_arrive_at_destination": {event:['travel-quest','notion-place'], gloss: "arrive at the place we've been trying to get to"},
+  "LAUNDRY_arrive_at_destination": {event:['travel-quest','notion.place'], gloss: "arrive at the place we've been trying to get to"},
   "LAUNDRY_pass_obstacle": {event: ['journey-event'], gloss: "character gets past obstacle"},
   //"LAUNDRY_": {},
   "LAUNDRY_": {},  
