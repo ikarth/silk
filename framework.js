@@ -155,3 +155,17 @@ function testGrammar(grammar_rules, context) {
     let message = grammar.flatten("#origin#");
     return {"message": message, "context": grammar};
 } */
+
+function testGrammar_displayResults(input_grammar, element_id) {
+      var container = document.getElementById(element_id);
+      var responses = "<ul>";
+      for(var i = 0; i < 15; i++) {
+                         responses += "<li>";
+                         responses += testGrammar(input_grammar)["message"];
+                         responses += "</li>"
+                         }
+      responses += "</ul>";
+    container.innerHTML = responses;
+    console.log(responses);
+}
+    
