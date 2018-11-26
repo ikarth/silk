@@ -105,7 +105,7 @@ function weave(edges, constraints) {
       let path = e[i].split('.'),
           prev = focus
       let res = path.reduce((tail, head) => {
-        let board = select(head).select('#,'+prev)
+        let board = select(head).select('#'+prev)
         // let fallback = cast[head] ? cast[head] : edges.length
         
         console.log('\t\t' + board.body[0])

@@ -13,7 +13,7 @@
 
 
 var plot_arcs = {
-    "origin": ["#LAUNDRY_into_character# #PLOT_ARC#"],
+    "origin": ["LAUNDRY_intro_character #PLOT_ARC#"],
     "PLOT_ARC":["[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin# #PLOT_return_home# #PLOT_give_present#",
                 "[motive:birthday_present]#PLOT_want_to_give_present# #PLOT_need_macguffin_fail# #PLOT_return_home# #PLOT_failure_to_give_present#",
                 "[motive:flee_town]#PLOT_reason_to_flee_town# #PLOT_flee_town# #PLOT_wandering# #PLOT_return_home# #PLOT_resolve_reason_for_fleeing#",
@@ -69,11 +69,15 @@ var plot_replacement_map = {
   "LAUNDRY_fail_to_give_present_to_friend":   {event: ['gift', 'friend', 'thing'], gloss: "tragedy: did not acquire macguffin, so can't give it to friend"},
   "LAUNDRY_start_journey": {event:['journey-start'], gloss: "character starts their journey (great for introducing expositon)"},
   "LAUNDRY_end_journey": {event:['journey-end'], gloss: "character ends their journey"},
-  "LAUNDRY_arrive_at_destination": {event:['travel-quest','notion-place'], gloss: "arrive at the place we've been trying to get to"},
+  "LAUNDRY_arrive_at_destination": {event:['travel-quest','notion.place'], gloss: "arrive at the place we've been trying to get to"},
   "LAUNDRY_complete_obstacle": {event: ['journey-event'], gloss: "character gets past obstacle"},
   "LAUNDRY_overcome_obstacle": {event: ['journey-event'], gloss: "character deals with obstacle through wit/cleverness/skill"},
   "LAUNDRY_overcome_obstacle_fail": {event: ['journey-event'], gloss: "character fails to overcome an obstacle"},
-  "LAUNDRY_": {},  
+  "LAUNDRY_": {}, 
+  "NESTING_increase_macguffin_nesting": {event: ['macguffin-new'], gloss: "add a new macguffin to the narrative, on top of the macguffin stack"},
+  "NESTING_decrease_macguffin_nesting": {event: ['macguffin-resolve'], gloss: "resolve current macguffin, removing it from the stack"},
+  "NESTING_increase_journey_nesting": {event: ['journey-new'], gloss: "starting a new sub-journey, placing it on top of the journey stack"},
+  "NESTING_decrease_journey_nesting": {event: ['journey-resolve'], gloss: "ending this sub-journey"},
 };
 
 function generatePlot() {
