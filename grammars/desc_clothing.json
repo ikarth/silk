@@ -1,0 +1,39 @@
+{
+  "origin": [
+    "#physicaldesc#"
+  ],
+  "physicaldesc": [
+    "[thePronoun:#pronoun#] #thePronoun.capitalize# looks to be #emotion#, and seem to be wearing #clothingadj.a# #torsoClothing#"
+  ],
+  "pronoun": [
+    "he[torsoClothing:#heTorsoClothing#]",
+    "she[torsoClothing:#sheTorsoClothing#]",
+    "they[torsoClothing:#theyTorsoClothing#]"
+  ],
+  "emotion": [
+    "worn-out"
+  ],
+  "clothingadj": [
+    "torn",
+    "well-made"
+  ],
+  "heTorsoClothing": [
+    "shirt",
+    "doublet",
+    "robe",
+    "cioppa"
+  ],
+  "sheTorsoClothing": [
+    "blouse",
+    "gown",
+    "long gown",
+    "chemise",
+    "cotehardie",
+    "houppelande",
+    "overgown"
+  ],
+  "theyTorsoClothing": [
+    "#heTorsoClothing#",
+    "#sheTorsoClothing#"
+  ]
+}

@@ -6,7 +6,9 @@ let desc_clothing ={
     "My name is #name#. I am known as #title#.",
     "Some call me #title#, but you may call me #name#.",
     "Fear not! #title#, also known as #name# is here!",
-    "This one is #name#. I am also called #title#."
+    "This one is #name#. I am also called #title#.",
+    "My legend proceeds me even here! I am #title#, named #name#.",
+    "I doubt you have heard of me. I am #name#, sometimes called #title#.",
   ],
 //Add more indian, look at constantinople, Iranian)
   "maleCountry":[
@@ -179,8 +181,8 @@ let desc_clothing ={
 
   ],
   "physicaldesc": [
-    "#pronounThey.capitalize# #look.s# to be #quality#, and seem to be wearing #clothingadj.a# #setTorsoClothing#",
-    "#pronounThey.capitalize# has #quality.a# look in #pronounTheir# eye. #pronounThey.capitalize# is wearing #clothingadj.a# #setTorsoClothing#"
+    "I #look.ed# to be #quality#, and was wearing #clothingadj.a# #setTorsoClothing#",
+    "I had #quality.a# look in my eye. I was wearing #clothingadj.a# #setTorsoClothing#"
   ],
 
   "look":[
