@@ -152,7 +152,7 @@ let desc_clothing ={
     "My legend proceeds me even here! I am #title#, named #name#.",
     "I doubt you have heard of me. I am #name#, sometimes called #title#.",
   ],
-//Add more indian, look at constantinople, Iranian)
+//Stopped for 11/30. Removed Indian family names for current
   "maleCountry":[
     "[country:China][name:#chineseFamilyName# #chineseMaleName#]", 
     "[country:Persia][name:#persianFamilyName# #persianMaleName#]",
@@ -160,7 +160,7 @@ let desc_clothing ={
     "[country:Arabic][name:#arabicMaleSet#]",
     //According to SCA website, no real deleniation between male/female, so this should just work
     "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianFamilyName# #indianMaleName#]",
+    "[country:India][name:#indianMaleName#]",
    // "[country:Iran][name:#iranianFamilyName# #iranianGivenName#]"
 
   ],
@@ -171,7 +171,7 @@ let desc_clothing ={
     "[country:Byzantine][name:#byzantineFemaleName# #byzantineFamilyName#]",
     "[country:Arabic][name:#arabicFemaleSet#]",
     "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianFamilyName# #indianFemaleName#]"
+    "[country:India][name:#indianFemaleName#]"
   ],
 
   "gnCountry":[
@@ -180,7 +180,7 @@ let desc_clothing ={
     "[country:Byzantine][name:#byzantineGivenName# #byzantineFamilyName#]",
     "[country:Arabic][name:#arabicGivenName#]",
     "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianFamilyName# #indianGivenName#]"
+    "[country:India][name:#indianGivenName#]"
   ],
 
   "chineseGivenName":[
@@ -1656,13 +1656,215 @@ let desc_clothing ={
   ],
 
   "indianFamilyName":[
-
-
-
+    ""
   ]
 }
 
+let things_desc = {
+  "origin":[
+    "[setArtifact:#artifact#]The #artifact# was #description#, and was #power#.",
+    "#idiom# The #mat1# #artifact# #madeWith# #mat2# #detail# was #there# on the #altar#.",
+    "#idiom# As I #moved# #silently# into the #location#, I #saw# the #mat1# #artifact# #madeWith# #mat2# #detail# on the #altar# "
+    ],
 
+    "moved":[
+      "crept",
+      "crawled",
+      "snuck",
+      "walked"
+    ],
+
+    "silently":[
+      "quietly",
+      "silently",
+      "noiselessly",
+      "calmly",
+      "soundlessly"
+    ],
+
+    "location":[
+      "placeholder, variable drawn from other grammar?"
+    ],
+
+    "power":[
+     "placeholder, may not want power?"
+    ],
+
+    "idiom":[
+      "Thank goodness!",
+      "Praise the heavens!",
+      "Lucky little me!",
+      "Fortune smiles upon me!",
+      "haha, I've still got it!"
+
+    ],
+
+    "madeWith":[
+      "inlaid with",
+      "constructed with",
+      "detailed with"
+    ],
+
+    "artifact":[
+      "book",
+      "tome",
+      "knife",
+      "sash",
+      "mask",
+      "arrow",
+      "pouch",
+      "spike",
+      "brush",
+      "sword",
+      "bag",
+      "bell",
+      "belt",
+      "mirror",
+      "bones",
+      "seed",
+      "comb",
+      "boot",
+      "bracer",
+      "cage",
+      "candelabrum",
+      "cauldron",
+      "chair",
+      "throne",
+      "charm",
+      "chime",
+      "collar",
+      "compass",
+      "crown",
+      "cruicble",
+      "crystal",
+      "root",
+      "badge",
+      "mantle",
+      "drum",
+      "torc",
+      "ring",
+      "bracelet",
+      "ring",
+      "girdle",
+      "glove",
+      "amulet",
+      "hilt",
+      "trinket",
+      "prayer strip",
+      "skull",
+      "needle",
+      "cup",
+      "map",
+      "doll",
+      "sheathe",
+      "pip",
+      "dagger",
+      "scroll",
+      "scepter",
+      "quill",
+      "stamp",
+      "pen",
+      "pin",
+      "talisman",
+      "urn",
+      "vessel"
+    ],
+
+    "description":[
+      "made of #mat1# and #mat2#",
+      "made of #mat1# with #mat2.a# inlay",
+      "constructed with #mat1# and bits of #mat2#",
+      "etched with #mat1# and coated in #mat2#",
+      "spiked with #mat2# on a base of #mat1#"
+    ],
+
+    "mat1": [
+      "jade",
+      "wood",
+      "ivory",
+      "ebony",
+      "iron",
+      "brass",
+      "gold",
+      "bamboo",
+      "bone",
+      "glass",
+      "silver",
+      "bronze",
+      "reeds",
+      "cotton",
+      "linen"
+    ],
+
+    "mat2":[
+      "jade",
+      "wood",
+      "ivory",
+      "ebony",
+      "iron",
+      "brass",
+      "gold",
+      "bamboo",
+      "bone",
+      "glass",
+      "silver",
+      "bronze",
+      "reeds",
+      "cotton",
+      "linen"
+    ],
+
+    "detail":[
+      "in a floral pattern",
+      "in an animal pattern",
+      "in a spiral design",
+      "in a circular design",
+      "in a blocky pattern",
+      "smudged with grease",
+      "covered in dust",
+      "with many small dents",
+      "with a crack through the center",
+      "with one side chipped",
+      "with visible wear",
+      "with unsightly stains",
+      "with slight mold growth",
+      "with some water damage",
+      "with a name inscribed on it",
+      "with a sigil branded on it",
+      "that was slightly too big",
+      "that was slightly too small",
+      "just the right size",
+      "brand new",
+      "carefully cleaned",
+      "recently repaired",
+      "emiting a strange odor",
+      "emiting a pleasent scent",
+      "ringing slightly",
+      "colored darker",
+      "colored lighter"
+    ],
+
+    "there":[
+      "left alone",
+      "dropped carelessly",
+      "sitting",
+      "lying against",
+      "drapped over",
+      "carefully set"
+    ],
+
+    "altar":[
+      "altar",
+      "podieum",
+      "table",
+      "stand",
+      "pillar",
+      "base",
+      "chair",
+      "surface"
+    ]
+
+}
 
 // @notkrd (forked from landscape_desc.json)
 let landscape_desc = {
