@@ -1,7 +1,6 @@
 // d3-style interface to a directed graph, maybe cyclic
 // @jatazak
 
-let char = 'abcdefghjklmnopqrstuvwxyz'.toUpperCase() // omit 'I'
 class Rel {
     constructor(body) {
       this.body = [...body] // list of bonds
@@ -78,7 +77,7 @@ class Rel {
       }))
     } */
     toString() {
-      return this.body.map(u => u.name.split(',').map(c=>char[c]).join(''))
+      return this.body.map(u => u.name)
     }
     isEmpty() {
       return this.body.length == 0
