@@ -1784,7 +1784,9 @@ let things_desc = {
       "made of #mat1# with #mat2.a# inlay",
       "constructed with #mat1# and bits of #mat2#",
       "etched with #mat1# and coated in #mat2#",
-      "spiked with #mat2# on a base of #mat1#"
+      "spiked with #mat2# on a base of #mat1#",
+      "simple #mat1#",
+      "with a #mat1# surface etched with pictures in #mat2#"
     ],
 
     "mat1": [
@@ -1802,7 +1804,10 @@ let things_desc = {
       "bronze",
       "reeds",
       "cotton",
-      "linen"
+      "linen",
+      "wool",
+      "flax",
+      "twine"
     ],
 
     "mat2":[
