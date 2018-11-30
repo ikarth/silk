@@ -14,16 +14,54 @@
     <div id="output"></div>
     <script src="./framework.js"></script>
     <script>
+      function loadJSON(callback, file, accumulator) {
+
+          var xobj = new XMLHttpRequest();
+              xobj.overrideMimeType("application/json");
+          xobj.open('GET', 'grammars/'+file+'.json', true);
+          xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                  // Required use of an anonymous callback as .open
+                  // will NOT return a value but simply returns undefined
+                  // in asynchronous mode
+                  callback({...accumulator,
+                            ...JSON.parse(xobj.responseText)});
+                }
+          };
+          xobj.send(null);  
+      }
+      
       // You can load your results as a variable from a JavaScript file...
       //displayResults(plot_rules, "output");
 
-      displayResults('testing');
-      displayResults('output');
+      function main(rules) {
+        let event_stubs = bake_stubs(rules),
+          events = Object.keys(event_stubs),
+          eventer = events.reduce((res, k) => {
+        let U = event_stubs[k].origin ?
+                event_stubs[k] : {"origin": event_stubs[k]}
+                // turn stubs into grammars. leave grammars alone.
+
+        res[k] = U
+        return res
+        }, {})
+
+        displayResults('testing', eventer);
+        displayResults('output', eventer);
+      }
+      loadJSON((rules) => loadJSON(main, 'appearance', rules),
+                'things_desc')
 
       // ...or from a JSON file:
       //loadJSON(function(json_response) {
       //  displayResults(JSON.parse(json_response), "output");
       //}, "./grammars/test_grammar.json");
+
+      /* function partial(func, ...argsBound) {
+        return function(...args) { // (*)
+          return func.call(this, ...argsBound, ...args);
+        }
+      } */
 
     </script>
     <div id="visualization" style="">
