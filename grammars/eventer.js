@@ -8,16 +8,15 @@ let appearance ={
   "outerwear" : [ "abaya", "anorak", "apron", "blazer", "cagoule", "cloak", "coat", "duffle coat", "duster", "frock coat", "gilet", "greatcoat", "hoodie", "jacket", "leather jacket", "matchcoat", "mess jacket", "mino", "opera coat", "overcoat", "pea coat", "poncho", "parka", "raincoat", "rain pants", "redingote", "robe", "shawl", "shrug", "ski suit", "sport coat", "top coat", "trench coat", "vest", "waistcoat", "windbreaker"]
   }
   
-
 // @lee3206 (forked from intro_character.js)
 let intro_character = {
   "origin":[
   //First person narration, each intro starts with:
   //This is my story. I first...
   //I approached the caravan looking like #line#. I then revealed myself by #verbSay# #intro# #physicaldesc#
-  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I started to travel because #fullReason#. I first approached the caravan looking like #line#. I then revealed myself by #verbSaying#, \"#intro#\" #physicaldesc#",
-  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I began to travel because #fullReason#. I first hid, only revealing myself to the caravan from afar. When I approached, I said \"#intro#\" #physicaldesc#",
-  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I initiated my journey because #fullReason#. I first saw the caravan in the distance, and ran to approach. I looked like #line#, and #verbSay.ed#, \"#intro#\" #physicaldesc# "
+  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I started to travel because #fullReason#. I first approached the caravan looking like #line#. I then revealed myself by #verbSaying#, \"#intro#\" #physicaldesc#.",
+  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I began to travel because #fullReason#. I first hid, only revealing myself to the caravan from afar. When I approached, I said \"#intro#\" #physicaldesc#.",
+  "[setTitle:#title#][setPronouns:#pronoun#] This is my story. I initiated my journey because #fullReason#. I first saw the caravan in the distance, and ran to approach. I looked like #line#, and #verbSay.ed#, \"#intro#\" #physicaldesc#."
   ],
 
   "verbSaying": [
@@ -141,8 +140,8 @@ let reason_travel = {
    
 }
 let desc_clothing ={
-  "origin": [
-    "[setTitle:#title#][setPronouns:#pronoun#]#intro# #physicaldesc#"
+  "myStory": [
+    "[setTitle:#title#][setPronouns:#pronoun#]#intro# #physicaldesc#."
   ],
   "intro":[
     "My name is #name#. I am known as #title#.",
@@ -1661,10 +1660,10 @@ let desc_clothing ={
 }
 
 let things_desc = {
-  "origin":[
+  "findThing":[
     "[setArtifact:#artifact#]The #artifact# was #description#, and was #power#.",
-    "#idiom# The #mat1# #artifact# #madeWith# #mat2# #detail# was #there# on the #altar#.",
-    "#idiom# As I #moved# #silently# into the #location#, I #saw# the #mat1# #artifact# #madeWith# #mat2# #detail# on the #altar# "
+    "#idiom# The #mat1# #artifact# #madeWith# #mat2# was #there# on #altar.a#.",
+    "#idiom# As I #moved# #silently# inwards, I #saw# the #mat1# #artifact# #madeWith# #mat2# on the #altar#."
     ],
 
     "moved":[
@@ -1682,12 +1681,22 @@ let things_desc = {
       "soundlessly"
     ],
 
-    "location":[
+    /* "location":[
       "placeholder, variable drawn from other grammar?"
+    ], */
+
+    "saw": [
+      "discovered",
+      "found",
+      "saw",
+      "noticed",
+      "uncovered",
     ],
 
     "power":[
-     "placeholder, may not want power?"
+     "gleaming with inner light",
+     "light as a feather",
+     "untouched by dust or wear",
     ],
 
     "idiom":[
@@ -1695,7 +1704,7 @@ let things_desc = {
       "Praise the heavens!",
       "Lucky little me!",
       "Fortune smiles upon me!",
-      "haha, I've still got it!"
+      "-haha, I've still got it!"
 
     ],
 
@@ -1877,14 +1886,14 @@ let landscape_desc = {
   "inhabited_desc":["#farmers.capitalize# #moved_through# fields of #theCrop#."],
   "uninhabited_desc":["Fields of #theCrop# #expanse#, #uninhabited_prep#.", "#animal.capitalize# flitted through the #uninhabited# fields."],
   "uninhabited_prep":["now #uninhabited#", "with no soul in them"],
-  "farmers":["#farmer_desc# #farmer_bodies#","#lines_of# #farmer_bodies# carrying #tool#."],
+  "farmers":["#farmer_desc# #farmer_bodies#","#lines_of# #farmer_bodies# carrying #tool#"],
   "farmer_desc":["hunched", "#lines_of#"],
   "farmer_bodies":["bodies","souls","farmers"],
   "tool":["sacks","hoes"],
   
   "terrain":["#steppes#"],
   
-  "steppes":["The steppes #expanse# around the travelers."],
+  "steppes":["The steppes #expanse# around us travelers."],
   
   "uninhabited":["vacant","empty"],
   "lines_of":["lines of", "rows of", "many"],
@@ -1898,18 +1907,21 @@ let landscape_desc = {
 // @jazztap
 let event_stubs = {
     'need': [],
-    'find': ['I found #3# at #2#.'], // me, notion, place, thing
-    'reflect': ['I thought about #2# in the safety of #1#. #3# had been a great surprise.'],
+    'find': { ...things_desc,
+              'origin': 'I found #3# at #2#. #findThing#.'},
+    'reflect': ['I thought about #2# in the safety of #1#. I held #3# in my hands.'],
     'unleash': ['#3# once warned me of courting #2#, whose haunt was #1#. But it was too late.'],
     'murder': ['In the streets of #2#, I shot #1# with an arrow through the breastbone.'],
-    'seethe': ['I had met #1# in #2#, where they sold me a useless #3#.'],
+    'seethe': { ...things_desc,
+                'origin': 'I had met #1# in #2#, where they sold me a useless #3#, #artifact.a# #detail#.'},
 
     'relax': ['I went on a walk with #1#, while we considered the matter of #2#.'],
     'contact': ['#1# introduced me to #2#.'],
     'speechify': ['I regaled the people of #1#. Afterward, #2# sought me out.'],
     'unhappiness': ['The streets of #1# seemed vacant. #2# spoke to me lowly.'],
     'happiness': ['The streets of #1# were brimming with celebrants, #2# sometimes joining them.'],
-    'mill-around': ['I explored #1#, finding #2# for sale from local vendors.'],
+    'mill-around': {...things_desc,
+                    'origin': 'I explored #1#, finding #2# for sale from local vendors: #artifact.a# #madeWith# #mat2# #detail#.'},
 
     'find-friend': ['While in #2#, I met #1# by chance.'],
     'save-friend': ['I discovered #1# was menaced by #2#.'],
@@ -1937,10 +1949,8 @@ let event_stubs = {
     'journey-resolve': ['I passed through.'],
     'macguffin-new': ['I started to look for #1#.'],
     'macguffin-resolve': ['I finished my sub-quest for #1#.'],
-    'intro-character': {...intro_character,
-                        ...reason_travel,
-                        ...desc_clothing},
-    // '#0# began to tell their tale:'
+    'intro-character': {...appearance, ...desc_clothing,
+                        'origin': '#0# began to tell their tale: #myStory#'},
   }
 
 let events = Object.keys(event_stubs)
