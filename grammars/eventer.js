@@ -215,5 +215,5 @@ let bake_stubs = (rules) => ({
     'macguffin-new': ['I started to look for #1#.'],
     'macguffin-resolve': ['I finished my sub-quest for #1#.'],
     'intro-character': {...rules,
-                        'origin': '#0#, in their #physicaldesc#, began to tell their tale: #intro#'}, // : #myStory#
+                        'origin': '#0#, in their #physicaldesc#, began to tell their tale: #intro#'}
   })
