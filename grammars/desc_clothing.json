@@ -1,14 +1,14 @@
 {
   "myStory": [
-    "[setTitle:#title#][setPronouns:#pronoun#]#intro# #physicaldesc#."
+    "[title:#title#][char_pronouns:#pronoun#]#intro# #physicaldesc#."
   ],
   "intro":[
-    "My name is #name#. I am known as #title#.",
-    "Some call me #title#, but you may call me #name#.",
-    "Fear not! #title#, also known as #name# is here!",
-    "This one is #name#. I am also called #title#.",
-    "My legend proceeds me even here! I am #title#, named #name#.",
-    "I doubt you have heard of me. I am #name#, sometimes called #title#."
+    "My name is #char_name#. I am known as #title#.",
+    "Some call me #title#, but you may call me #char_name#.",
+    "Fear not! #title#, also known as #char_name# is here!",
+    "This one is #char_name#. I am also called #title#.",
+    "My legend proceeds me even here! I am #title#, named #char_name#.",
+    "I doubt you have heard of me. I am #char_name#, sometimes called #title#."
   ],
 
   "sources": ["http://heraldry.sca.org/names/arabic-naming2.htm",
@@ -18,31 +18,31 @@
     "http://heraldry.sca.org/names/mongolian_names_marta.html"],
 
   "maleCountry":[
-    "[country:China][name:#chineseFamilyName# #chineseMaleName#]", 
-    "[country:Persia][name:#persianFamilyName# #persianMaleName#]",
-    "[country:Byzantine][name:#byzantineMaleName# #byzantineFamilyName#]",
-    "[country:Arabic][name:#arabicMaleSet#]",
-    "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianMaleName#]"
+    "[country:China][char_name:#chineseFamilyName# #chineseMaleName#]", 
+    "[country:Persia][char_name:#persianFamilyName# #persianMaleName#]",
+    "[country:Byzantine][char_name:#byzantineMaleName# #byzantineFamilyName#]",
+    "[country:Arabic][char_name:#arabicMaleSet#]",
+    "[country:Mongolia][char_name:#mongolianName#]",
+    "[country:India][char_name:#indianMaleName#]"
 
   ],
 
   "femaleCountry":[
-    "[country:China][name:#chineseFamilyName# #chineseFemaleName#]", 
-    "[country:Persia][name:#persianFamilyName# #persianFemaleName#]",
-    "[country:Byzantine][name:#byzantineFemaleName# #byzantineFamilyName#]",
-    "[country:Arabic][name:#arabicFemaleSet#]",
-    "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianFemaleName#]"
+    "[country:China][char_name:#chineseFamilyName# #chineseFemaleName#]", 
+    "[country:Persia][char_name:#persianFamilyName# #persianFemaleName#]",
+    "[country:Byzantine][char_name:#byzantineFemaleName# #byzantineFamilyName#]",
+    "[country:Arabic][char_name:#arabicFemaleSet#]",
+    "[country:Mongolia][char_name:#mongolianName#]",
+    "[country:India][char_name:#indianFemaleName#]"
   ],
 
   "gnCountry":[
-    "[country:China][name:#chineseFamilyName# #chineseGivenName#]", 
-    "[country:Persia][name:#persianFamilyName# #persianGivenName#]",
-    "[country:Byzantine][name:#byzantineGivenName# #byzantineFamilyName#]",
-    "[country:Arabic][name:#arabicGivenName#]",
-    "[country:Mongolia][name:#mongolianName#]",
-    "[country:India][name:#indianGivenName#]"
+    "[country:China][char_name:#chineseFamilyName# #chineseGivenName#]", 
+    "[country:Persia][char_name:#persianFamilyName# #persianGivenName#]",
+    "[country:Byzantine][char_name:#byzantineGivenName# #byzantineFamilyName#]",
+    "[country:Arabic][char_name:#arabicGivenName#]",
+    "[country:Mongolia][char_name:#mongolianName#]",
+    "[country:India][char_name:#indianGivenName#]"
   ],
 
   "chineseGivenName":[

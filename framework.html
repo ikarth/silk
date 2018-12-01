@@ -40,11 +40,13 @@
       }
       loadJSON((rules) =>
       loadJSON((rules) =>
+      loadJSON((rules) =>
         loadJSON((rules) =>
           loadJSON((rules) =>
             loadJSON(main, 'landscape_desc', rules),
           'roads_travel', rules),
           'desc_clothing', rules),
+          'town_desc', rules),
           'journey_rules', rules),
           'things_desc', {})
 

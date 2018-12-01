@@ -1,18 +1,19 @@
 {
-  "origin":["[setTown:#town_phrase#][setExport:#export#]We made it to #setName#, #town_phrase#. Here, #system# rules, and the #rigorous# #country# #bureaucracy# applied #system# #well# ",
-    "[setTown:#town_phrase#][setExport:#export#]#setName#, #town_phrase# was #known_phrase# for it's exports of #export#"
+  "origin_town":[
+    "[setTownPhrase:#town_phrase#][setExport:#export#][the_country:#country#]We made it to #setTownName#, #setTownPhrase#. Here, #system# rules, and the #rigorous# #country_adj# #bureaucracy# applied #system# #well#. ",
+    "[setTownPhrase:#town_phrase#][setExport:#export#][the_country:#country#]#setTownName#, #setTownPhrase# was #known_phrase# for its exports of #setExport#"
   ],
 
   "town_phrase":[
-   "[setName:#town_name#][setDetail:#detail#]city of #setDetail#",
-   "[setName:#town_name#][setDetail:#detail#]#setDetail# city",
-   "[setName:#town_name#][setDetail:#detail#]the city of #setDetail#",
-   "[setName:#town_name#][setDetail:#detail#]the #setDetail# city"
+   "[setTownName:#town_name#][setDetail:#detail#]city of #setDetail#",
+   "[setTownName:#town_name#][setDetail:#detail#]#setDetail# city",
+   "[setTownName:#town_name#][setDetail:#detail#]the city of #setDetail#",
+   "[setTownName:#town_name#][setDetail:#detail#]the #setDetail# city"
 
   ],
 
   "known_phrase":[
-    "known #space#. #valence.capitalize#"
+    "#space#. #valence.capitalize#"
   ],
 
   "valence":[
@@ -27,17 +28,16 @@
   ],
 
   "space":[
-    "far and wide",
-    "near and far",
-    "to all cities of the world",
+    "known far and wide",
+    "known near and far",
+    "known to all cities of the world",
     "famous around the land",
-    "only to a few",
-    "only to one people",
-    "to be hidden and difficult to find"
+    "known only to a few",
+    "known only to one people",
+    "known to be hidden and difficult to find"
   ],
 
 
-   //From Marco Polo
   "town_name":[
     "Lot",
     "Ur",
@@ -82,8 +82,7 @@
     "Chengdu",
     "Kunming",
     "Pagan"
-    //First pass at corpa, might expand later
-  ],
+     ],
 
   "export":[
     "seafood",
@@ -161,7 +160,7 @@
     "mysticism",
     "Feng Shui",
     "gangsters",
-    "beurocrats",
+    "bureaucrats",
     "fishermen",
     "teachers",
     "martial artists"
@@ -208,13 +207,12 @@
   ],
 
   "country":[
-    "China", 
-    "Persia",
-    "Byzantine",
-    "Arabic",
-    "Mongolia",
-    "India"
-
+    "[country_adj:Chinese]China", 
+    "[country_adj:Persian]Persia",
+    "[country_adj:Byzantine]Byzantine",
+    "[country_adj:Arabic]Arabic",
+    "[country_adj:Mongolian]Mongolia",
+    "[country_adj:Indian]India"
   ]
 
 

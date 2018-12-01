@@ -1,7 +1,7 @@
 {
     "journey_strive": ["#journey_strive_begin# #journey_strive_middle# #journey_strive_end#"],
     "journey_strive_begin":["The road stretched out in front of us. ","We set out again on our travels. ", "The rising sun found us on the road again. ", "The life of a traveler is one of change. ", "Soon after, the dust of the road covered our clothes again. ", "Walking is a contemplative practice for some and an excuse to complain for others. ", "We left that place behind us and continued our journey. "],
-    "journey_strive_middle": ["#journey_strive_middle# #journey_strive_middle#", "As I walked, I recited the story of how I had ended up on this path. ", "We paused when we saw that we were passing a local herder. ", "The shade of a tree was a welcome respite. ", "Despite the distance, we were careful to pace ourselves. ", "Sometimes travellers have been known to come to a bad end in this region. ", "When we were there, the place seemed peaceful enough. ", "The distance was greater than it had looked that morning. ", "Contemplating a journey is not the same as actually walking there. ","I passed the time by singing to myself. ", "You might be surprised to know that #journey_strive_personal_detail#. ", "It wasn't something I mentioned to my fellow travellers, but #journey_strive_personal_detail. "],
+    "journey_strive_middle": ["#journey_strive_middle# #journey_strive_middle#", "As I walked, I recited the story of how I had ended up on this path. ", "We paused when we saw that we were passing a local herder. ", "The shade of a tree was a welcome respite. ", "Despite the distance, we were careful to pace ourselves. ", "Sometimes travellers have been known to come to a bad end in this region. ", "When we were there, the place seemed peaceful enough. ", "The distance was greater than it had looked that morning. ", "Contemplating a journey is not the same as actually walking there. ","I passed the time by singing to myself. ", "You might be surprised to know that #journey_strive_personal_detail#. ", "It wasn't something I mentioned to my fellow travellers, but #journey_strive_personal_detail#. "],
     "journey_strive_end": ["But all journeys, no matter how short or long, must come to an end. ", "", "After a longer time than I wished, I found myself in a new place. ", "One foot in front of the other enough times, and you are there. ", "Eventually, we saw that there were other travellers gathering ahead of us. We had arrived. ", "Finally, we arrived. ", "I was approaching my next destination. "],     
     "journey_strive_personal_detail": ["it had been a long time since I had thought of the home I had left", "my feet were sore", "I felt energized by the new sights", "I was retraining myself from constantly looking over my shoulder", "I was practicing imitating the birds that we had heard","I was contemplating my next decision","I was having an interal debate about destiny and fate", "I occasionally doubted that I had made the right choice by coming here"],
     "reacted_to_unhappy_city": ["#rtuc_one# #rtuc_two#"],
@@ -74,6 +74,7 @@
 "assuming a dictatorial mindset", 
 "using overt force to achieve your goals and maintain order"],
     
-    "placeTitle": ["the City of Heaven", "Xanadu", "Venice"],
-    "notionTitle": ["unity", "duty", "destiny"]
+    "placeTitle": ["[townOriginIntro:#origin_town#]#setTownName#"],
+
+    "notionTitle": ["the unity", "my duty", "destiny"]
 }

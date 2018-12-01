@@ -142,7 +142,11 @@ function weave(edges, constraints, eventer, rules) {
         // emergency fallback
         let pick = board.isEmpty() ? link(head, M, verb) :
                                     board.pickOne() // .drop(reserved)
-        char[M] = nameThing(nameHook[verb])
+        let new_name = nameHook[verb]
+        //if char.includes(new_name) {
+        //  new_name = nameHook[verb];  
+        //}
+        char[M] = nameThing(new_name);
         let res = board.isEmpty() ? M++ :
                                     pick.body[0].name.split(',')[1]
 
@@ -192,7 +196,7 @@ function displayResults(element_id, rules) {
       let responses = [];
       let event_stubs = bake_stubs(rules)
       let events = Object.keys(event_stubs)
-      for(let i = 0; i < 6; i++) {
+      for(let i = 0; i < 300; i++) {
           let eventer = events.reduce((res, k) => {
               let U = event_stubs[k].origin ?
                       event_stubs[k] : {...rules, "origin": event_stubs[k]}
@@ -218,7 +222,11 @@ function displayResults(element_id, rules) {
                          }
       responses += "</ul>"; */
           }
-    container.innerHTML = responses.join('<h1>CHAPTER</h1>');
+    let book_title = "Silk"
+    let book_text = '<h2>CHAPTER ZZZ</h2>' + responses.join('<h2>CHAPTER ZZZ</h2>');
+    let chapter_count = 0;
+    book_text = book_text.replace(/ZZZ/g, function() {return ++chapter_count;});
+    container.innerHTML = "<h1>" + book_title + "</h1>\n" + book_text + "\n";
     // console.log(relations)
 }
 
