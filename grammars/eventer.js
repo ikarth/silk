@@ -173,7 +173,7 @@ let landscape_desc = {
 let bake_stubs = (rules) => ({
     'need': [],
     'find': { ...rules,
-              'origin': 'I found #3# at #2#. #findThing#.'},
+              'origin': 'I found #3# at #2#. #findThing#'},
     'reflect': ['I thought about #2# in the safety of #1#. I held #3# in my hands.'],
     'unleash': ['#3# once warned me of courting #2#, whose haunt was #1#. But it was too late.'],
     'murder': ['In the streets of #2#, I shot #1# with an arrow through the breastbone.'],
@@ -215,5 +215,5 @@ let bake_stubs = (rules) => ({
     'macguffin-new': ['I started to look for #1#.'],
     'macguffin-resolve': ['I finished my sub-quest for #1#.'],
     'intro-character': {...rules,
-                        'origin': '#0#, #line#, began to tell their tale.'}, // : #myStory#
+                        'origin': '#0#, in their #physicaldesc#, began to tell their tale: #intro#'}, // : #myStory#
   })

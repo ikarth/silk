@@ -1,11 +1,17 @@
 {
   "findThing":[
     "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]The #artifact# was #description#, and was #power#.",
+    "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]The #artifact# was #description#, and was #power#.",
+    "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]The #mat1# #artifact# #madeWith# #mat2# was #there# on #altar.a#.",
+    "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]The #mat1# #artifact# #madeWith# #mat2# was #there# on #altar.a#.",
     "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]#idiom# The #mat1# #artifact# #madeWith# #mat2# was #there# on #altar.a#.",
-    "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]#idiom# As I #moved# #silently# inwards, I #saw# the #mat1# #artifact# #madeWith# #mat2# on the #altar#."
+    "[mat1:#mat#][mat2:#mat#][artifact:#artifact#]As I #moved# #silently# inwards, I #saw# the #mat1# #artifact# #madeWith# #mat2# on the #altar#."
     ],
 
-    "name": ["#mat1.a# #artifact#"],
+    "thingTitle": ["[mat1:#mat#][artifact:#artifact#]#mat1.a# #artifact#"],
+
+    "placeTitle": ["the City of Heaven", "Xanadu", "Venice"],
+    "notionTitle": ["unity", "duty", "destiny"],
 
     "moved":[
       "crept",

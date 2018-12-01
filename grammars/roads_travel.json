@@ -1,4 +1,4 @@
-let roads_travel = {
+{
     "origin":[
 
     	"[setGeoFeature:#geoFeature#] We #travelVerb# #throughVerb# the #geoFeature# #road#."
@@ -6,7 +6,6 @@ let roads_travel = {
     ],
     "travelVerb":[
     	"travel",
-    	//"excursion", 
     	"move", 
     	"tour",
     	"trek",
@@ -109,6 +108,5 @@ let roads_travel = {
 		"moor"
 
     ]
-
 
 }
