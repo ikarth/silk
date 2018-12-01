@@ -1,6 +1,7 @@
 'use strict';
 
-let N = 5, M = 5
+let N = 25 // N = characters
+let M = N // M = things & stuff 
 let char = []
 let count = () => char.length
 let maker = (rules, edges) => function(i, kind, expansion) {
@@ -185,14 +186,16 @@ function weave(edges, constraints, eventer, rules) {
 function displayResults(element_id, rules) {
       var container = document.getElementById(element_id);
 
-      let constraints = generatePlot(N)
+      
       let relations = makeRelations(N, rules)
 
-      let event_stubs = bake_stubs(rules),
-          events = Object.keys(event_stubs),
-          eventer = events.reduce((res, k) => {
+      let responses = [];
+      let event_stubs = bake_stubs(rules)
+      let events = Object.keys(event_stubs)
+      for(let i = 0; i < 34; i++) {
+          let eventer = events.reduce((res, k) => {
               let U = event_stubs[k].origin ?
-                      event_stubs[k] : {"origin": event_stubs[k]}
+                      event_stubs[k] : {...rules, "origin": event_stubs[k]}
                       // turn stubs into grammars. leave grammars alone.
 
               res[k] = U
@@ -201,9 +204,10 @@ function displayResults(element_id, rules) {
 
       // console.log(constraints.goals)
       // console.log(relations)
-      let responses = weave(relations, constraints, eventer, rules)
-                      .map((u) => '<li>' + u + '</li>')
-                      .reverse().join('\n')
+      let constraints = generatePlot(N)
+      responses.push(weave(relations, constraints, eventer, rules)
+                      .map((u) => '<p>' + u + '</p>')
+                      .reverse().join('\n'))
       // TODO: expect relations to be mutated (stepped back in time).
 
       /* var responses = "<ul>";
@@ -213,7 +217,8 @@ function displayResults(element_id, rules) {
                          responses += "</li>"
                          }
       responses += "</ul>"; */
-    container.innerHTML = '<ul>' + responses + '</ul>';
+          }
+    container.innerHTML = responses.join('<h1>CHAPTER</h1>');
     // console.log(relations)
 }
 

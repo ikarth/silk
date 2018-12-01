@@ -39,12 +39,15 @@
         displayResults('output', rules);
       }
       loadJSON((rules) =>
+      loadJSON((rules) =>
         loadJSON((rules) =>
           loadJSON((rules) =>
             loadJSON(main, 'landscape_desc', rules),
           'roads_travel', rules),
           'desc_clothing', rules),
+          'journey_rules', rules),
           'things_desc', {})
+
 
       // ...or from a JSON file:
       //loadJSON(function(json_response) {
