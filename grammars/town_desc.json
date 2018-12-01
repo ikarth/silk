@@ -1,19 +1,19 @@
 {
   "origin_town":[
     "[setTownPhrase:#town_phrase#][setExport:#export#][the_country:#country#]We made it to #setTownName#, #setTownPhrase#. Here, #system# rules, and the #rigorous# #country_adj# #bureaucracy# applied #system# #well#. ",
-    "[setTownPhrase:#town_phrase#][setExport:#export#][the_country:#country#]#setTownName#, #setTownPhrase# was #known_phrase# for its exports of #setExport#"
+    "[setTownPhrase:#town_phrase#][setExport:#export#][the_country:#country#]#setTownName#, #setTownPhrase# was #known_phrase# for its exports of #setExport#."
   ],
 
   "town_phrase":[
-   "[setTownName:#town_name#][setDetail:#detail#]city of #setDetail#",
-   "[setTownName:#town_name#][setDetail:#detail#]#setDetail# city",
-   "[setTownName:#town_name#][setDetail:#detail#]the city of #setDetail#",
-   "[setTownName:#town_name#][setDetail:#detail#]the #setDetail# city"
+   "[setTownName:#town_name#][setDetail:#detail_town#]city of #setDetail#",
+   "[setTownName:#town_name#][setDetail:#detail_town#]#setDetail# city",
+   "[setTownName:#town_name#][setDetail:#detail_town#]the city of #setDetail#",
+   "[setTownName:#town_name#][setDetail:#detail_town#]the #setDetail# city"
 
   ],
 
   "known_phrase":[
-    "#space#. #valence.capitalize#"
+    "#space#, #valence#"
   ],
 
   "valence":[
@@ -110,7 +110,7 @@
     "scholars"
   ],
 
-  "detail":[
+  "detail_town":[
     "heaven",
     "earth",
     "sky",
@@ -159,11 +159,12 @@
     "art",
     "mysticism",
     "Feng Shui",
-    "gangsters",
-    "bureaucrats",
-    "fishermen",
-    "teachers",
-    "martial artists"
+    "corruption",
+    "bureaucracy",
+    "fishing management",
+    "husbandry",
+    "academia",
+    "martial artistry"
   ],
 
   "rigorous":[

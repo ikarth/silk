@@ -119,8 +119,8 @@ var plot_replacement_map = {
   "LAUNDRY_defend_town": {event: ['save-town', 'place.antagonist']},
   "LAUNDRY_flee_town": {event: ['travel-forced', 'place', 'notion.place']},
 
-  "NESTING_increase_macguffin_nesting": {event: ['macguffin-new', 'notion'], gloss: "add a new macguffin to the narrative, on top of the macguffin stack"},
-  "NESTING_decrease_macguffin_nesting": {event: ['macguffin-resolve', 'notion'], gloss: "resolve current macguffin, removing it from the stack"},
+  "NESTING_increase_macguffin_nesting": {event: ['macguffin-new', 'notion.thing'], gloss: "add a new macguffin to the narrative, on top of the macguffin stack"},
+  "NESTING_decrease_macguffin_nesting": {event: ['macguffin-resolve', 'notion.thing', 'place'], gloss: "resolve current macguffin, removing it from the stack"},
   "NESTING_increase_journey_nesting": {event: ['journey-new'], gloss: "starting a new sub-journey, placing it on top of the journey stack"},
   "NESTING_decrease_journey_nesting": {event: ['journey-resolve'], gloss: "ending this sub-journey"},
 };

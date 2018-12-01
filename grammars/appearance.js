@@ -1,9 +1,0 @@
-let appearance ={
-"origin":["#line#"],
-"line":["#appearance.a# #person# #wearing# #color.a# #outerwear#"],
-"appearance":[ "angered", "ill", "angry", "intelligent", "mean", "cruel", "moody", "displaced", "sad", "dumb", "excited", "sick", "grumpy", "stupefied", "happy", "tired", "large", "muscular", "attractive", "painted", "petite", "blond", "blue-eyed", "polished", "brown-eyed", "rosy", "brunette", "scarred", "short", "cute", "small", "tall", "tattooed", "thick", "heavy", "tiny", "wiry"],
-"person":["man", "woman", "child", "figure", "person", "traveler", "adventurer", "character", "individual"],
-"wearing":["clothed in", "enveloped by", "swathed in", "wearing", "donning", "dressed in", "sporting"],
-"color": [ "white", "silver", "grey", "black", "navy", "blue", "cerulean", "sky blue", "turquoise", "blue-green", "azure", "teal", "cyan", "green", "chartreuse", "olive", "yellow", "gold", "amber", "orange", "brown", "orange-red", "red", "maroon", "rose", "red-violet", "pink", "magenta", "purple", "blue-violet", "indigo", "violet", "peach", "apricot", "ochre", "plum"],
-"outerwear" : [ "abaya", "anorak", "apron", "blazer", "cagoule", "cloak", "coat", "duffle coat", "duster", "frock coat", "gilet", "greatcoat", "hoodie", "jacket", "leather jacket", "matchcoat", "mess jacket", "mino", "opera coat", "overcoat", "pea coat", "poncho", "parka", "raincoat", "rain pants", "redingote", "robe", "shawl", "shrug", "ski suit", "sport coat", "top coat", "trench coat", "vest", "waistcoat", "windbreaker"]
-}

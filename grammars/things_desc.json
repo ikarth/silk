@@ -1,13 +1,4 @@
 {
-  "findThing":[
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]The #the_artifact# was #description#, and was #power#.",
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]The #the_artifact# was #description#, and was #power#.",
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]The #mat1# #the_artifact# #madeWith# #mat2# was #there# on #altar.a#.",
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]The #mat1# #the_artifact# #madeWith# #mat2# was #there# on #altar.a#.",
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]#idiom# The #mat1# #the_artifact# #madeWith# #mat2# was #there# on #altar.a#.",
-    "[mat1:#mat#][mat2:#mat#][the_artifact:#artifact#]As I #moved# #silently# inwards, I #saw# the #mat1# #the_artifact# #madeWith# #mat2# on the #altar#."
-    ],
-
     "thingTitle": ["[mat1:#mat#][the_artifact:#artifact#]#mat1.a# #the_artifact#"],
 
     "moved":[

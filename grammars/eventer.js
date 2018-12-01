@@ -2,8 +2,19 @@
 let bake_stubs = (rules) => ({
     'need': [],
     'find': { ...rules,
-              'origin': 'I found #3# at #2#. #findThing#'},
-    'reflect': ['I thought about #2# of #1#. I held #3# in my hands.', 'As I considered #3#, I was filled with determination as I thought of how #2# is experienced in #1#.'],
+              'stub': 'I found #3# at #2#.',
+              'findThing': [
+                "[mat1:#mat#][mat2:#mat#]The #3# was #description#, and was #power#.",
+                "[mat1:#mat#][mat2:#mat#]The #3# was #description#, and was #power#.",
+                "[mat1:#mat#][mat2:#mat#]The #3# #madeWith# #mat2# was #there# on #altar.a#.",
+                "[mat1:#mat#][mat2:#mat#]The #3# #madeWith# #mat2# was #there# on #altar.a#.",
+                "[mat1:#mat#][mat2:#mat#]#idiom# The #3# #madeWith# #mat2# was #there# on #altar.a#.",
+                "[mat1:#mat#][mat2:#mat#]As I #moved# #silently# inwards, I #saw# the #3# #madeWith# #mat2# on the #altar#."
+                ],
+              'origin': ['#stub# #findThing#']},
+    'reflect': ['I thought about #2# of #1#. I held #3# in my hands.',
+                'As I considered #3#, I thought of how #2# is experienced in #1#.',
+                'As I considered #3#, I thought of how #2# is experienced in #1#, and felt filled with determination.'],
     'unleash': ['#3# once warned me of courting #2#, whose haunt was #1#. But it was too late.'],
     'murder': ['In the streets of #2#, I shot #1# with an arrow through the breastbone.'],
     'seethe': { ...rules,
@@ -22,9 +33,9 @@ let bake_stubs = (rules) => ({
     'save-town': ['I resolved to stay in #1#. #2# soon moved against it, but we were ready.'],
     'travel-forced': ['I could no longer stay in #1#. Remembering #2#, I left for #3# to seek it out.'],
 
-    'travel-quest': ['#origin_road_travel# We arrived at #1#.'],
+    'travel-quest': ['#origin_road_travel# We approached #2#.'],
     'learn': ['I found out about #1#.'],
-    'learn-at': ['I found out #1# is at #2#.'],
+    'learn-at': ['I found out about #1.a# of #2#.'],
     'make': [],
     'master': [],
     'intend-gift': ['I wanted to give #1# a birthday gift.'],
@@ -42,7 +53,7 @@ let bake_stubs = (rules) => ({
     'journey-new': ['#journey_strive#'],
     'journey-resolve': ['#origin_town# We did not stay long.'],
     'macguffin-new': ['I started to look for #1#.'],
-    'macguffin-resolve': ['I finished my sub-quest for #1#.'],
+    'macguffin-resolve': ['I found a sense of #1#.'],
     'intro-character': {...rules,
                         'origin': '#0#, in their #physicaldesc#, began to tell their tale: #intro#'}
   })
