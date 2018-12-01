@@ -192,7 +192,7 @@ function displayResults(element_id, rules) {
       let responses = [];
       let event_stubs = bake_stubs(rules)
       let events = Object.keys(event_stubs)
-      for(let i = 0; i < 34; i++) {
+      for(let i = 0; i < 6; i++) {
           let eventer = events.reduce((res, k) => {
               let U = event_stubs[k].origin ?
                       event_stubs[k] : {...rules, "origin": event_stubs[k]}

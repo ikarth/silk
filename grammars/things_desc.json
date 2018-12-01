@@ -10,9 +10,6 @@
 
     "thingTitle": ["[mat1:#mat#][artifact:#artifact#]#mat1.a# #artifact#"],
 
-    "placeTitle": ["the City of Heaven", "Xanadu", "Venice"],
-    "notionTitle": ["unity", "duty", "destiny"],
-
     "moved":[
       "crept",
       "crawled",
